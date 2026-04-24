@@ -12,7 +12,7 @@ type TableArguments = [
 	LimitTableWidth?: boolean,
 ];
 type TableEvents = Hovered;
-type TableState = {
+export type TableState = {
 	widths: number[];
 };
 

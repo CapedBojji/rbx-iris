@@ -51,7 +51,7 @@ import {
 } from "./widgets/plot";
 import { RadioButtonDeclaration, RadioButtonArguments, RadioButtonState } from "./widgets/radioButton";
 import { TabArguments, TabBarDeclaration, TabBarState, TabDeclaration, TabState } from "./widgets/tab";
-import { TableDeclaration, TableArguments } from "./widgets/table";
+import { TableDeclaration, TableArguments, TableState } from "./widgets/table";
 import {
 	InputTextDeclaration,
 	InputTextArguments,
@@ -95,7 +95,7 @@ declare namespace Iris {
 	export { Config };
 	export { Internal };
 
-	export function Init(instance?: BasePlayerGui | GuiBase, eventConnection?: EventLike): void;
+	export function Init(instance?: BasePlayerGui | GuiBase2d, eventConnection?: EventLike, allowMultipleInits?: boolean): void;
 	export function Shutdown(): void;
 	export function Connect(this: typeof Iris, callback: () => unknown | void): () => void;
 	export function Append(userInstance: GuiObject): void;
@@ -464,12 +464,16 @@ declare namespace Iris {
 	/* ---------------------------------- TABLE --------------------------------- */
 
 	export type Table = Widget<TableDeclaration>;
-	export function Table(args: TableArguments): Table;
-	export function Table(args: Arguments<TableArguments>): Table;
+	export function Table(args: TableArguments, state?: InitialState<TableState>): Table;
+	export function Table(args: Arguments<TableArguments>, state?: InitialState<TableState>): Table;
 	// Table API
 	export function NextColumn(): void;
 	export function SetColumnIndex(columnIndex: number): void;
 	export function NextRow(): void;
+	export function SetRowIndex(rowIndex: number): void;
+	export function NextHeaderColumn(): void;
+	export function SetHeaderColumnIndex(columnIndex: number): void;
+	export function SetColumnWidth(columnIndex: number, width: number): void;
 
 	/* ---------------------------------- PLOT ---------------------------------- */
 
@@ -484,10 +488,10 @@ declare namespace Iris {
 	export function PlotLines(args: PlotLinesArguments, state?: InitialState<PlotLinesState>): PlotLines;
 	export function PlotLines(args: Arguments<PlotLinesArguments>, state?: InitialState<PlotLinesState>): PlotLines;
 
-	export type PlotHistogram = Widget<PlotLinesDeclaration>;
-	export function PlotHistogram(args: PlotLinesArguments, state?: InitialState<PlotLinesState>): PlotHistogram;
+	export type PlotHistogram = Widget<PlotHistogramDeclaration>;
+	export function PlotHistogram(args: PlotHistogramArguments, state?: InitialState<PlotLinesState>): PlotHistogram;
 	export function PlotHistogram(
-		args: Arguments<PlotLinesArguments>,
+		args: Arguments<PlotHistogramArguments>,
 		state?: InitialState<PlotLinesState>,
 	): PlotHistogram;
 	/* ---------------------------------- IMAGE --------------------------------- */
