@@ -8,11 +8,8 @@ local TemplateConfig = {
         -- Dear ImGui uses 110, 110, 125
         -- The Roblox window selection highlight is 67, 191, 254
         BorderColor = Color3.fromRGB(110, 110, 125),
-        BorderActiveColor = Color3.fromRGB(160, 160, 175), -- does not exist in Dear ImGui
-
-        -- BorderTransparency will be problematic for non UIStroke border implimentations
-        -- is not implimented because of this
         BorderTransparency = 0.5,
+        BorderActiveColor = Color3.fromRGB(160, 160, 175), -- does not exist in Dear ImGui
         BorderActiveTransparency = 0.3,
 
         WindowBgColor = Color3.fromRGB(15, 15, 15),
@@ -52,7 +49,7 @@ local TemplateConfig = {
 
         SliderGrabColor = Color3.fromRGB(66, 150, 250),
         SliderGrabTransparency = 0,
-        SliderGrabActiveColor = Color3.fromRGB(117, 138, 204),
+        SliderGrabActiveColor = Color3.fromRGB(66, 150, 250),
         SliderGrabActiveTransparency = 0,
 
         HeaderColor = Color3.fromRGB(66, 150, 250),
@@ -82,6 +79,8 @@ local TemplateConfig = {
         TableRowBgTransparency = 1,
         TableRowBgAltColor = Color3.fromRGB(255, 255, 255),
         TableRowBgAltTransparency = 0.94,
+        TableHeaderColor = Color3.fromRGB(48, 48, 51),
+        TableHeaderTransparency = 0,
 
         NavWindowingHighlightColor = Color3.fromRGB(255, 255, 255),
         NavWindowingHighlightTransparency = 0.3,
@@ -177,7 +176,7 @@ local TemplateConfig = {
 
         SliderGrabColor = Color3.fromRGB(61, 133, 224),
         SliderGrabTransparency = 0,
-        SliderGrabActiveColor = Color3.fromRGB(66, 150, 250),
+        SliderGrabActiveColor = Color3.fromRGB(117, 138, 204),
         SliderGrabActiveTransparency = 0,
 
         SelectionImageObjectColor = Color3.fromRGB(0, 0, 0),
@@ -193,6 +192,8 @@ local TemplateConfig = {
         TableRowBgTransparency = 1,
         TableRowBgAltColor = Color3.fromRGB(77, 77, 77),
         TableRowBgAltTransparency = 0.91,
+        TableHeaderColor = Color3.fromRGB(199, 222, 250),
+        TableHeaderTransparency = 0,
 
         NavWindowingHighlightColor = Color3.fromRGB(179, 179, 179),
         NavWindowingHighlightTransparency = 0.3,
@@ -286,6 +287,7 @@ local TemplateConfig = {
     utilityDefault = {
         UseScreenGUIs = true,
         IgnoreGuiInset = false,
+        ScreenInsets = Enum.ScreenInsets.CoreUISafeInsets,
         Parent = nil,
         RichText = false,
         TextWrapped = false,
