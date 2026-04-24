@@ -46,6 +46,8 @@ import {
 	PlotLinesDeclaration,
 	PlotLinesArguments,
 	PlotLinesState,
+	PlotHistogramDeclaration,
+	PlotHistogramArguments,
 } from "./widgets/plot";
 import { RadioButtonDeclaration, RadioButtonArguments, RadioButtonState } from "./widgets/radioButton";
 import { TabArguments, TabBarDeclaration, TabBarState, TabDeclaration, TabState } from "./widgets/tab";

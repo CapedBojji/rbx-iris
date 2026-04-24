@@ -4,7 +4,7 @@ import { EventApi } from "./creation/widgetClass";
 type TextArguments = [Text: string, Wrapped?: boolean, Color?: Color3, RichText?: boolean];
 type TextEvents = Hovered;
 
-type InputTextArguments = [Text?: string, TextHint?: string];
+type InputTextArguments = [Text?: string, TextHint?: string, ReadOnly?: boolean, MultiLine?: boolean];
 type InputTextState = {
 	text: string;
 };

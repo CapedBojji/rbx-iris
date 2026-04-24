@@ -3,11 +3,12 @@ import { ClickEvents, Hovered, WidgetArguments } from "./creation/utils";
 type ImageArguments = [
 	Image: string,
 	Size: UDim2,
-	ScaleType: Enum.ScaleType,
-	ResampleMode: Enum.ResamplerMode,
-	TileSize: UDim2,
-	SliceCenter: Vector2,
-	SliceScale: number,
+	Rect?: Rect,
+	ScaleType?: Enum.ScaleType,
+	ResampleMode?: Enum.ResamplerMode,
+	TileSize?: UDim2,
+	SliceCenter?: Rect,
+	SliceScale?: number,
 ];
 
 type ImageEvents = Hovered;
